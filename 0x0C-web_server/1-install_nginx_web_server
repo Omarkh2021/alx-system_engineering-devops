@@ -1,46 +1,8 @@
-
-AI Chat
-AI Image Generator
-Login
-
-AI Chat
-AI Chat is an AI chatbot that writes text. You can use it to write stories, messages, or programming code. You can use the AI chatbot as a virtual tutor in almost any subject.
-
-To install Nginx on your web-01 server and configure it to meet the requirements, you can follow these steps in a Bash script:
-
-    Update the package list and upgrade existing packages.
-    Install Nginx.
-    Configure Nginx to listen on port 80.
-    Create an HTML file with the "Hello World!" content.
-    Configure Nginx to serve the HTML file at the root.
-
-Here's the Bash script to automate these steps:
-
-#!/bin/bash
-
-# Update the package list and upgrade existing packages
-sudo apt-get update
+#!/usr/bin/env bash
+# Install the web server 'nginx' on the server
+sudo apt-get update -y
 sudo apt-get upgrade -y
-
-# Install Nginx
 sudo apt-get install nginx -y
-
-# Configure Nginx to listen on port 80
-sudo mv /etc/nginx/sites-enabled/default /etc/nginx/sites-enabled/default.bak
-cat << EOF > /etc/nginx/sites-enabled/default
-server {
-    listen 80;
-    server_name localhost;
-    root /var/www/html;
-    index index.html;
-    location / {
-        try_files $uri $uri/ =404;
-    }
-}
-EOF
-
-# Create an HTML file with the "Hello World!" content
-echo 'Hello World!' > /var/www/html/index.html
-
-# Restart Nginx
-sudo service nginx reload
+ufw allow 'Nginx HTTP'
+echo "Hello World!" > /var/www/html/index.html
+sudo service nginx start
