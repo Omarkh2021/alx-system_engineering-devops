@@ -1,3 +1,5 @@
-vagrant@vagrant:~$ docker run -p 8080:80 -d -it holbertonschool/265-0 /bin/bash -c "start-apache2-foreground"
-vagrant@vagrant:~$ curl 0:8080
+#!/usr/bin/env bash
+# Start Apache so as to return a
+# page conatining Hello Holberton
+service apache2 start
 Hello Holberton
