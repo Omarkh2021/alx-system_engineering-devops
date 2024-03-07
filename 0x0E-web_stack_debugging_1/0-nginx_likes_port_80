@@ -1,5 +1,8 @@
-#!/usr/bin/env bash
-# Create symbloic link between sites-available and sites-enabled.
-
-ln -s -f /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-sudo service nginx restart
+#!/usr/bin/env bash 
+# Configures an Nginx server to listen on port 80.
+# remove the default Nginx configuration file
+rm/etc/nginx/aitea-enabled/default 
+# Configure Nginx to listen on port 80 for all active IPv4 IPs
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default 
+# restart nginx  
+service nginx restart
