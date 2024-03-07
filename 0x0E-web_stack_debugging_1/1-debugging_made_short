@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Change default port (8080) with (80).
-
-sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
-pkill -1 nginx
+# Installing new server to serve content
+./0-nginx_likes_port_80
+echo "hi" > /var/run/nginx.pid
+echo "hi" > /run/nginx.pid
