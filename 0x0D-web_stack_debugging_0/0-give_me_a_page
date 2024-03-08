@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-# run apache on designated container
-
-echo "Hello Holberton" >> /etc/apache2.conf
-Hello Holberton start
- echo "Hello Holberton" > /var/www/html/index.html
